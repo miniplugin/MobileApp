@@ -30,8 +30,8 @@
 - //Expo 사이트에서 react-native-app 프로젝트 추가 후(사이트주소 https://expo.dev/) App을 Expo사이트에 배포할 때 필요 지금은 안하고 건너띔.
 - npx create-expo-app react-native-app // native환경의 폴더 생성! (app 뒤로는 프로젝트명)
 - 위 초기앱 생성 후 package.json에 자동으로 입력된 값:  expo SDK 버전 50.0.5, react 버전 18.2.0, react-native 버전 0.73.2 및
-- cd react-native-app 
-- //eas init --id Expo사이트에서 프로젝트 추가시 생성된ID // 생성된 폴더 안으로 들어가서 입력! App을 Expo사이트에 배포할 때 필요 지금은 안함.
+- cd react-native-app //아래부터는 생성된 폴더 안으로 들어가서 입력!
+- //eas init --id Expo사이트에서 프로젝트 추가시 생성된ID // .git폴더가 생성된다. App을 Expo사이트에 배포할 때 필요 지금은 안함.
 - 결과확인 : √ Project successfully linked (ID: Expo사이트에서 프로젝트 추가 시 생성된 ID) (modified app.json)
 - 위 app.json 이 Expo사이트와 연동 시 추가된 코드는 app.json 파일 하단 부분에 있다.
 
