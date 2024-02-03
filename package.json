@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "eas-cli": "^7.1.2",
+    "expo-cli": "^6.3.10"
+  }
+}

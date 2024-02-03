@@ -1,0 +1,39 @@
+# dependencies
+node_modules/
+# App git source
+react-native-app/.git/
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+react-native-app/node_modules/
+
+# Expo
+react-native-app/.expo/
+react-native-app/dist/
+react-native-app/web-build/
+
+# Native
+react-native-app/*.orig.*
+react-native-app/*.jks
+react-native-app/*.p8
+react-native-app/*.p12
+react-native-app/*.key
+react-native-app/*.mobileprovision
+
+# Metro
+react-native-app/.metro-health-check*
+
+# debug
+react-native-app/npm-debug.*
+react-native-app/yarn-debug.*
+react-native-app/yarn-error.*
+
+# macOS
+react-native-app/.DS_Store
+react-native-app/*.pem
+
+# local env files
+react-native-app/.env*.local
+
+# typescript
+react-native-app/*.tsbuildinfo
