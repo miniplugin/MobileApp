@@ -1,7 +1,10 @@
-### 녹스 애뮬레이터에서 리액트 네이티브 앱 배포 및 실행 기술참조 ( https://github.com/GrotesQ/Codelab-React-Native-2nd/blob/master/ReactNativeWithNoxPlayer.md )
-- 녹스애뮬레이터는 이전 수업에 사용했던 7.0.1.8 버전을 사용한다. (다운로드 위치는 강의시 알려줌. 녹스란? https://gloria94.tistory.com/21 )
-- 깃에서 다운받아 사용하시는 분들은 C:\MobileApp 폴더와 C:\MobileApp\react-native-app폴더에서 각각 npm install 하고 실행합니다.
-- React Native Cli 대신 Expo Cli를 사용합니다.
+### 녹스 애뮬레이터에서 리액트 네이티브 앱 배포 및 실행 
+- 관련 교재 : 처음 배우는 리액트 네이티브 https://fliphtml5.com/ko/hkuy/htis/basic
+- 기술참조 : https://github.com/GrotesQ/Codelab-React-Native-2nd/blob/master/ReactNativeWithNoxPlayer.md 
+- 녹스애뮬레이터는 수업에 사용했던 7.0.1.8 버전을 사용한다. 녹스에 대한 설명( https://gloria94.tistory.com/21 )
+- 녹스애뮬레이터 다운로드 위치 : https://support.bignox.com/ko/win-release/7018 
+- 깃에서 다운 앱 소스를 받아 사용하시는 분들은 C:\MobileApp 폴더와 C:\MobileApp\react-native-app폴더에서 각각 npm install 하고 실행합니다.
+- 교육은 React Native Cli(자바 및 안드로이드 스튜디오 설치 및 버전 세팅 필수) 대신 간편한 Expo Cli를 사용합니다.
 ------------------------------------------------------------------------------------------------------
 ### 리액트는 노드js기반이기 때문에 nvm(노드버전매니저) 설치 후 노드js설치(아래)
 - nvm-setup.exe 를 다운로드 받아서 설치 : https://github.com/coreybutler/nvm-windows/releases
@@ -27,11 +30,11 @@
 - eas -v (Expo Application Service 설치확인 eas-cli/7.1.2)
 ------------------------------------------------------------------------------------------------------
 #### 리액트 네이티브 앱 프로젝트 추가 : 용어설명 eas: Expo Application Service(아래)
-- //Expo 사이트에서 react-native-app 프로젝트 추가 후(사이트주소 https://expo.dev/) App을 Expo사이트에 배포할 때 필요 지금은 안하고 건너띔.
+- //Expo 사이트에서 react-native-app 프로젝트 추가 후(사이트주소 https://expo.dev/) App을 Expo사이트에 배포할 때 필요 교육용 에서는 안하고 건너띔.
 - npx create-expo-app react-native-app // native환경의 폴더 생성! (app 뒤로는 프로젝트명)
 - 위 초기앱 생성 후 package.json에 자동으로 입력된 값:  expo SDK 버전 50.0.5, react 버전 18.2.0, react-native 버전 0.73.2 및
 - cd react-native-app //아래부터는 생성된 폴더 안으로 들어가서 입력!
-- //eas init --id Expo사이트에서 프로젝트 추가시 생성된ID // 교육에서는.git폴더를 제거했으나 학생들은 그대로둔다. App을 Expo사이트에 배포할 때 필요 지금은 사용안함.
+- //eas init --id Expo사이트에서 프로젝트 추가시 생성된ID // 교육에서는.git폴더를 압축한 후 제거했으나 학생들은 그대로둔다. App을 Expo사이트의 프로젝트와 연동 시킬 때 필요 교육용 에서는 사용안하고 건너띔.
 - 결과확인 : √ Project successfully linked (ID: Expo사이트에서 프로젝트 추가 시 생성된 ID) (modified app.json)
 - 위 app.json 이 Expo사이트와 연동 시 추가된 코드는 app.json 파일 하단 부분에 있다.
 
@@ -49,8 +52,10 @@
 - 녹스와 ide 연결 : adb.exe connect 127.0.0.1:62001 (별도 cmd창을 관리자권한으로 실행한 후 이 명령을 실행하면 수월하게 진행 됩니다.)
 - 간혹 앱이 응답이 없이 무한반복 되면 : adb.exe kill-server 로 초기화 시킨 후 다시 위 명령으로 connection 한다.
 - 연결 확인 : adb.exe devices
-- //expo login (필요시 Expo사이트에 콘솔로 로그인, 지금은 녹스애뮬레이터에서만 실행하기 때문에 필요 없음)
-- npm run start 
+- npm run start //react-native-cli와 같은 방식인 Metor 서버실행 됨. 이후 a키보드로 안드로이드 앱으로 배포(아래)
 - 터미널에서 실행 후 w 키보드를 누르면 수정된 화면이 웹에 바로 보여진다.(참고로, 앱 화면 상단에 reload 버튼이 있음)
 - 단 a 키로 안드로이드 앱으로 실행하면, 최초 Expo Go라는 앱을 녹스에 다운받는 모습이 터미널에 표시되고, 이후 앱이 실행 된다.
-- 간혹 앱이 응답이 없이 무한반복 되면 :  로 초기화 시킨 후 다시 위 명령으로 connection 한다.
+------------------------------------------------------------------------------------------------------
+#### 리액트네이티브 앱 실행파일 만들기-교육용 에서는 녹스애뮬레이터에서만 실행하기 때문에 필요에 건너띔(아래) 
+- //expo login (apk 실행파일로 빌드시 Expo사이트에 콘솔로 로그인 후 진행)
+- //이후 실행파일 만들기 작업 내용에 대한 기술 참조(Step6 부터) : https://aspdotnet.tistory.com/2985
